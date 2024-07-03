@@ -1,0 +1,178 @@
+/* Import Bootstrap CSS via CDN */
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Comfortaa:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem; /* 16px */
+  font-family: 'Comfortaa', sans-serif;
+  color: #283618;
+  background-color: #fefae0;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+h1 {
+  font-family: 'Borel';
+  text-align: center;
+  background-color: #283618;
+  color: white;
+  font-size: 5rem;
+  padding-top: 3rem;
+}
+h2 {
+  text-align: center;
+  background-color: #517e1d;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.add-form {
+  background-color: #dda15e;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.add-form h3 {
+  margin-right: 2rem;
+  font-size: 3rem;
+}
+
+.add-form div {
+  margin: 1rem 0;
+}
+
+.add-form div select {
+  margin-right: 1rem;
+}
+
+button,
+select,
+input {
+  background-color: #fefae0;
+  font-family: inherit;
+  border: none;
+  border-radius: 3rem;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+select:hover{
+  color: black;
+}
+
+input:focus, button:focus, select:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+button {
+  background-color: #283618;
+  color: #fefae0;
+  font-weight: bold;
+}
+
+.list {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table {
+  width: 90%;
+  margin-top: 1rem;
+}
+
+
+.table th,
+.table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#check{
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+#buton{
+  margin-left: 1rem;
+}
+
+.table th {
+  background-color: #283618;
+  color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2;
+}
+
+.actions {
+  background-color: #606c38;
+  width: 100%;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.actions button,
+.actions select {
+  padding: 0.8rem 2.4rem;
+  font-size: 1.4rem;
+  margin: 0 0.8rem;
+}
+
+.stats {
+  background-color: #bc6c25;
+  color: white;
+  text-align: center;
+  padding: 3.2rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  .table {
+    width: 100%;
+  }
+}
+
+/* mobile */
+@media (max-width: 576px) {
+  html {
+    font-size: 40%;
+  }
+
+  .table {
+    width: 100%;
+  }
+}
