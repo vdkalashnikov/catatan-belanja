@@ -83,10 +83,12 @@ select:hover{
   color: black;
 }
 
+
 input:focus, button:focus, select:focus{
   outline: none;
   box-shadow: none;
 }
+
 
 button {
   background-color: #283618;
@@ -153,6 +155,18 @@ button {
   padding: 3.2rem 0;
   font-size: 2rem;
   font-weight: bold;
+}
+
+.input-form{
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.6rem;
+  column-gap: 0.6rem;
+  justify-content: center;
+}
+
+select optgroup{
+  max-height: 5rem;
 }
 
 /* tablet */

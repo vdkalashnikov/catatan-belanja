@@ -26,10 +26,18 @@ export default function GroceryList({items, onDeleteItem, onToggleItem, onClearI
       case 'checked':
         sortedItems = items.slice().sort((a, b) => a.checked - b.checked)
         break
+      case 'oldest' :
+        sortedItems = items.slice().sort((a, b) => new Date(a.date) - new Date(b.date))
+        break
+      case 'newest' :
+        sortedItems = items.slice().sort((a, b) => new Date(b.date) - new Date(a.date))
+        break
       default:
         sortedItems = items
         break
     }
+
+    const total = items.reduce((acc, item) => acc + item.price, 0);
   
     return (
       <>
@@ -41,6 +49,8 @@ export default function GroceryList({items, onDeleteItem, onToggleItem, onClearI
               <th scope="col">Jumlah</th>
               <th scope="col">Satuan</th>
               <th scope="col">Nama Barang</th>
+              <th scope="col">Total Harga</th>
+              <th scope="col">Tanggal</th>
               <th scope="col">Aksi</th>
             </tr>
           </thead>
@@ -54,6 +64,15 @@ export default function GroceryList({items, onDeleteItem, onToggleItem, onClearI
                 onToggleItem={onToggleItem}
               />
             ))}
+            <tr>
+              <td colSpan={4}>Total Harga</td>
+              <td>{new Intl.NumberFormat("id-ID", {
+                style: 'currency',
+                currency: 'IDR'
+              }).format(total)}</td>
+              <td colSpan={2}></td>
+            </tr>
+            
           </tbody>
         </table>
       </div>
@@ -63,8 +82,10 @@ export default function GroceryList({items, onDeleteItem, onToggleItem, onClearI
           <option value="input">Urutkan berdasarkan urutan input</option>
           <option value="name">Urutkan berdasarkan nama barang</option>
           <option value="checked">Urutkan berdasarkan ceklis</option>
+          <option value="oldest">Urutkan berdasarkan tanggal terlama</option>
+          <option value="newest">Urutkan berdasarkan tanggal terbaru</option>
         </select>
-        <button onClick={onClearItems}>Bersihkan Daftar</button>
+        {/* <button onClick={onClearItems}>Bersihkan Daftar</button> */}
       </div>
       </>
     )
